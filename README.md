@@ -36,6 +36,38 @@ AI-powered automated support ticket resolution for Zoho Desk
 
 **Tech Stack:** Python • Zoho Desk API • Zoho Assist API • Microsoft Graph API
 
+**🆓 FREE 3-Day Trial Available** - Both editions now include a secure trial system for easy evaluation!
+
+---
+
+## 🎁 Free & Open-Source Tools
+
+We believe in giving back to the community. Here are our free tools:
+
+### 🎫 [AI Ticket Classifier](https://github.com/Turtles-AI-Lab/ai-ticket-classifier)
+Lightweight Python library for classifying support tickets
+
+**Features:**
+- Zero dependencies for pattern-based classification
+- Optional LLM support (OpenAI, Azure, local)
+- 11 pre-configured IT support categories
+- Custom category support
+- Integration examples for Zendesk, Atera, Zoho
+
+**Perfect for:** Building ticket automation, chatbots, or integrating into existing helpdesk systems
+
+### 💰 [LLM Cost Calculator](https://github.com/Turtles-AI-Lab/llm-cost-calculator)
+Free web tool to compare AI API costs across providers
+
+**Features:**
+- Compare 30+ models across 6 providers
+- Real-time cost calculations
+- Use case templates (chatbot, document analysis, etc.)
+- No installation required - runs in browser
+- Instant savings analysis
+
+**Perfect for:** Anyone researching LLM costs, budgeting AI projects, or comparing providers
+
 ---
 
 ## 💡 What We Build
