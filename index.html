@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom AI automation solutions for businesses. Banking workflows, IT support automation, and document processing that save $10K-$100K annually.">
+    <meta name="keywords" content="AI automation, custom AI solutions, business automation, IT automation, banking AI, workflow automation">
+    <title>Turtles AI Lab | Custom AI Automation Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5568d3;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --gray: #4a5568;
+            --success: #48bb78;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 20px;
+        }
+
+        section:nth-child(even) {
+            background: var(--light);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+
+        h2 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-top: 10px;
+        }
+
+        /* Solutions Grid */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+        }
+
+        .solution-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .solution-card .problem {
+            background: #fef5e7;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+        }
+
+        .solution-card .result {
+            background: #e8f8f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid var(--success);
+        }
+
+        .solution-card ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .solution-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .solution-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .tool-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .tool-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .tool-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Process */
+        .process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .process-step p {
+            color: var(--gray);
+        }
+
+        /* Industries */
+        .industries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .industry-tag {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-weight: 600;
+            color: var(--gray);
+            transition: all 0.3s;
+        }
+
+        .industry-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .contact-item a:hover {
+            border-bottom-color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .solutions-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🐢 Turtles AI Lab</h1>
+            <p class="tagline">"Show me your workflow, I'll show you the automation."</p>
+            <p>I build custom AI automation solutions that solve real business problems. From banking workflows to IT support automation, I turn repetitive tasks into intelligent systems that save $10K-$100K+ annually.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Free Discovery Call</a>
+                <a href="#solutions" class="btn btn-secondary">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section>
+        <div class="container">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Faster Processing</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$100K+</div>
+                    <div class="stat-label">Annual Savings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Cost Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30s</div>
+                    <div class="stat-label">Response Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions">
+        <div class="container">
+            <h2><span>Recent Solutions Built</span></h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>🏦 Banking Workflow Automation</h3>
+                    <div class="problem">
+                        <strong>Problem:</strong> Manual loan applications taking 45 minutes each
+                    </div>
+                    <ul>
+                        <li>AI-powered validation & fraud detection</li>
+                        <li>Automated compliance checking</li>
+                        <li>Multi-API orchestration</li>
+                        <li>Real-time dashboard</li>
+                    </ul>
+                    <div class="result">
+                        <strong>Result:</strong> 85% faster processing, 95% automated approvals
+                    </div>
+                    <p><strong>Tech:</strong> Python • FastAPI • Azure OpenAI</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>🎫 IT Support Ticket Automation</h3>
+                    <div class="problem">
+                        <strong>Problem:</strong> MSPs spending $9K/month on repetitive tickets
+                    </div>
+                    <ul>
+                        <li>Intelligent ticket classification</li>
+                        <li>Auto-resolution system</li>
+                        <li>Multi-tenant MSP support</li>
+                        <li>ROI analytics dashboard</li>
+                    </ul>
+                    <div class="result">
+                        <strong>Result:</strong> 40% cost reduction, 30-second response time
+                    </div>
+                    <p><strong>Tech:</strong> Python • Azure OpenAI • Atera/Zoho</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>📧 Document Processing Automation</h3>
+                    <div class="problem">
+                        <strong>Problem:</strong> Teams manually extracting data for hours
+                    </div>
+                    <ul>
+                        <li>AI-powered email parsing</li>
+                        <li>Structured data extraction</li>
+                        <li>Custom NLP pipelines</li>
+                        <li>System integrations</li>
+                    </ul>
+                    <div class="result">
+                        <strong>Result:</strong> 15 hours/week saved per team
+                    </div>
+                    <p><strong>Tech:</strong> Python • NLP • Custom Parsers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Tools Section -->
+    <section>
+        <div class="container">
+            <h2><span>Free Tools & Resources</span></h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: var(--gray);">
+                I believe in giving value first. Use these tools to solve common problems:
+            </p>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">💰</div>
+                    <h3>LLM Cost Calculator</h3>
+                    <p>Compare AI API costs across 20+ models from OpenAI, Anthropic, Google, Azure</p>
+                    <a href="https://turtles-ai-lab.github.io/llm-cost-calculator/" target="_blank" class="tool-link">Try it now →</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">⚡</div>
+                    <h3>API Latency Monitor</h3>
+                    <p>Real-time performance tracking for LLM providers</p>
+                    <a href="https://turtles-ai-lab.github.io/api-latency-monitor/" target="_blank" class="tool-link">Try it now →</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">📧</div>
+                    <h3>Email-to-Ticket Parser</h3>
+                    <p>AI-powered support email extraction tool</p>
+                    <a href="https://turtles-ai-lab.github.io/email-to-ticket-parser/" target="_blank" class="tool-link">Try it now →</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">📝</div>
+                    <h3>Prompt Template Library</h3>
+                    <p>Battle-tested AI prompts for business use cases</p>
+                    <a href="https://turtles-ai-lab.github.io/prompt-template-library/" target="_blank" class="tool-link">Try it now →</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🎫</div>
+                    <h3>AI Ticket Classifier</h3>
+                    <p>Lightweight Python library for ticket classification</p>
+                    <a href="https://github.com/Turtles-AI-Lab/ai-ticket-classifier" target="_blank" class="tool-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Work Section -->
+    <section>
+        <div class="container">
+            <h2><span>How I Work</span></h2>
+            <div class="process">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Free Discovery Call</h3>
+                    <p>30-minute call to understand your workflow, identify automation opportunities, and calculate potential ROI</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Free Proof of Concept</h3>
+                    <p>2-5 hour working prototype with your data. See real results. No obligation, you keep the code.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Production Build</h3>
+                    <p>Full implementation in 2-8 weeks. Integration with your systems. Investment: $5K-$50K depending on scope.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Ongoing Support</h3>
+                    <p>Optional maintenance & updates. Monthly retainer: $2K-$10K based on your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section>
+        <div class="container">
+            <h2><span>Industries I've Automated</span></h2>
+            <div class="industries">
+                <div class="industry-tag">✅ Financial Services</div>
+                <div class="industry-tag">✅ IT/MSP</div>
+                <div class="industry-tag">✅ Healthcare</div>
+                <div class="industry-tag">✅ Legal</div>
+                <div class="industry-tag">✅ E-commerce</div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 1.2rem; color: var(--gray);">
+                <strong>Your industry not listed?</strong> That's perfect - I specialize in solving new problems.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Let's Talk About Your Problem</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 20px;">Have a workflow that's eating your team's time?</p>
+            <p style="font-size: 1.1rem; margin-bottom: 40px;">
+                I'm offering <strong>free 30-minute discovery calls</strong> to analyze your workflow and calculate ROI.
+            </p>
+            <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 40px;">
+                No obligation. No sales pitch. Just honest advice.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <a href="mailto:jgreenia@jandraisolutions.com">jgreenia@jandraisolutions.com</a>
+                </div>
+                <div class="contact-item">
+                    💼 <a href="https://linkedin.com/in/james-greenia-535799149" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    🐙 <a href="https://github.com/Turtles-AI-Lab" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>© 2025 Turtles AI Lab | Building Custom AI Solutions That Solve Real Problems</strong></p>
+            <p><em>Not interested in off-the-shelf software? Perfect - neither am I. Let's build exactly what you need.</em></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                Built with AI-powered development tools (Claude Code, GitHub Copilot) to ship 10x faster.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
