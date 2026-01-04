@@ -23,7 +23,6 @@ I build custom AI automation solutions that solve real business problems. From b
 **🎫 IT Support Ticket Automation**
 - **Problem:** MSPs spending $9K/month on repetitive ticket responses
 - **Solution:** Intelligent ticket classification & auto-resolution system
-- **Result:** 40% cost reduction, 30-second response time
 - **Tech:** Python • Azure OpenAI • LM Studio • Atera/Zoho integrations
 
 **📧 Document Processing Automation**
@@ -54,7 +53,6 @@ I build custom AI automation solutions that solve real business problems. From b
 **Enterprise-grade AI loan processing system**
 
 **Solves:** Manual application review, fraud detection, compliance checking
-- AI fraud scoring with 94% accuracy
 - Multi-stage workflow orchestration
 - Integrated identity verification, credit checks, KYC/AML
 - Real-time dashboard with metrics
